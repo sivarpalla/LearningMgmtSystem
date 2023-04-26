@@ -1,0 +1,39 @@
+plugins {
+	id 'java'
+	id 'org.springframework.boot' version '2.7.10'
+	id 'io.spring.dependency-management' version '1.0.15.RELEASE'
+}
+
+group = 'com.mks'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '11'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	implementation 'org.springframework.boot:spring-boot-starter-batch'
+	implementation 'org.springframework.boot:spring-boot-devtools'
+	implementation 'org.springframework.boot:spring-boot-starter-jdbc'
+	implementation 'org.springframework.boot:spring-boot-starter-validation'
+	annotationProcessor("org.projectlombok:lombok:1.18.20")
+	implementation 'org.springframework.boot:spring-boot-starter-security'
+	compileOnly("org.projectlombok:lombok:1.18.20")
+	implementation group:'org.modelmapper',name:'modelmapper', version:'3.1.0'
+	// https://mvnrepository.com/artifact/mysql/mysql-connector-java
+	implementation group: 'mysql', name: 'mysql-connector-java', version: '8.0.14'
+	implementation group: 'org.springdoc', name: 'springdoc-openapi-ui', version: '1.6.9'
+	implementation 'org.springframework.boot:spring-boot-starter-actuator'
+	implementation group: 'org.apache.poi', name: 'poi', version: '3.17'
+	implementation group: 'io.jsonwebtoken', name: 'jjwt', version: '0.9.1'
+	implementation group: 'org.apache.poi', name: 'poi-ooxml', version: '3.17'
+
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}
